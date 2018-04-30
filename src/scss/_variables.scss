@@ -1,0 +1,25 @@
+$primary-color: #FF8C00;
+$secondary-color: #2B2129;
+$accent-color: #ACBCBD;
+$button-color: #2475F0;
+$header-font-size: 2em;
+
+$tablet-bp: 768px;
+$desktop-bp: 960px;
+
+
+@mixin bp-tablet {
+
+	@media only screen and (min-width: $tablet-bp) {
+		@content;
+		}
+}
+
+
+@mixin desktop-bp {
+		@media only screen and (min-width: $desktop-bp) {
+		@content;
+		}
+}
+
+

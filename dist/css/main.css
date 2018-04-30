@@ -1,0 +1,312 @@
+/* 
+==============================================
+CONTENT:	Project Name Here
+AUTHOR:		Your Name Here
+==============================================
+
+TABLE OF CONTENTS:
+
+0. Reset
+1. Main Layout
+2. Content
+
+==============================================
+*/
+/* 0. Reset, Variables, Mixins, etc... ================================= */
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+
+body {
+	line-height: 1;
+}
+
+ol, ul {
+	list-style: none;
+}
+
+blockquote, q {
+	quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/* 1. Main Layout ================================= */
+* {
+	box-sizing: border-box;
+}
+
+body {
+	color: #ACBCBD;
+	line-height: 1.5;
+	font-family: 'Gugi', cursive;
+	background: url("../../src/img/texture-bg.jpg") no-repeat center;
+}
+
+h1 {
+	font-size: 2em;
+}
+
+h2 {
+	font-size: 2em;
+}
+
+h3 {
+	font-size: 1.5em;
+	color: black;
+}
+
+a {
+	text-decoration: none;
+}
+
+li a {
+	font-size: 1.5em;
+}
+
+header {
+	max-width: 100%;
+	background: #000000;
+}
+
+p {
+	color: black;
+}
+
+.logo {
+	max-width: 100%;
+	width: 200px;
+}
+
+/* 3. Content ================================= */
+.main-header {
+	padding: .5em 0;
+}
+
+.main-header h1 {
+	color: #FF8C00;
+	text-align: center;
+	margin-bottom: 10px;
+}
+
+.main-header a {
+	color: #ACBCBD;
+	text-align: center;
+	display: block;
+	transition: .3s;
+	margin-bottom: 5px;
+}
+
+.main-header a:hover {
+	transform: scale(1.25);
+}
+
+.hero {
+	background: #FF8C00;
+	padding: 3em 0;
+	margin-bottom: 40px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.hero .logo {
+	border-radius: 0px 0px 200px 200px;
+}
+
+.hero h3 {
+	font-style: italic;
+}
+
+.info {
+	text-align: center;
+	padding-bottom: 15px;
+	margin: 10px;
+}
+
+.info h1 {
+	margin-bottom: 2em;
+	color: black;
+}
+
+.info a {
+	color: red;
+}
+
+.info-button {
+	letter-spacing: 0;
+}
+
+.info-button:hover,
+.info-button:active {
+	letter-spacing: 5px;
+}
+
+.info-button:after,
+.info-button:before {
+	border: 1px solid rgba(255, 255, 255, 0);
+	bottom: 0px;
+	content: " ";
+	display: block;
+	margin: 0 auto;
+	transition: all .7s ease-in-out;
+	width: 0;
+}
+
+.info-button:hover:after,
+.info-button:hover:before {
+	backface-visibility: hidden;
+	border-color: #fff;
+	transition: .7s ease-in-out;
+	width: 20%;
+}
+
+.info-button:hover:before {
+	bottom: auto;
+	top: 0;
+	width: 20%;
+}
+
+.col {
+	background: #ACBCBD;
+	padding: 1em;
+	margin: 0.8em .8em;
+	border-radius: 10px;
+}
+
+.col h3 {
+	border-bottom: 1px solid black;
+	text-align: center;
+}
+
+.col p {
+	margin-bottom: 2em;
+	margin: 2em;
+	text-align: center;
+}
+
+.col a {
+	display: block;
+	text-align: center;
+}
+
+.col .button {
+	background: #2475F0;
+	color: #fff;
+	border-radius: 10px;
+	padding: .5em;
+	transition: .3s;
+}
+
+.col .button:hover {
+	color: red;
+}
+
+footer {
+	background: #FF8C00;
+	color: black;
+	padding: 2em;
+	margin-top: 20px;
+	text-align: center;
+}
+
+@media only screen and (min-width: 768px) {
+	.info h1 {
+		font-size: 3em;
+		margin: auto;
+	}
+	.info a {
+		font-size: 2em;
+	}
+}
+
+@media only screen and (min-width: 768px) {
+	.col {
+		display: flex;
+	}
+	h3 {
+		margin: auto;
+	}
+	a {
+		margin: auto;
+		margin-right: 20px;
+	}
+}
+
+@media only screen and (min-width: 960px) {
+	.main-header {
+		display: flex;
+		justify-content: space-between;
+	}
+	.main-header h1 {
+		margin-left: 20px;
+	}
+	.main-header a {
+		margin-top: 10px;
+		margin-left: 20px;
+	}
+	.main-header ul {
+		display: flex;
+	}
+}
+
+@media only screen and (min-width: 960px) {
+	.row {
+		display: flex;
+		flex-direction: row;
+	}
+	.col {
+		flex-direction: column;
+		align-content: center;
+		flex: 1;
+	}
+	.col a {
+		margin: auto;
+	}
+	.col h3 {
+		border: none;
+	}
+	.selected {
+		-webkit-box-shadow: inset 10px 10px 300px 53px rgba(0, 0, 0, 0.75);
+		-moz-box-shadow: inset 10px 10px 300px 53px rgba(0, 0, 0, 0.75);
+		box-shadow: inset 10px 10px 300px 53px rgba(0, 0, 0, 0.75);
+	}
+}
+
+/*# sourceMappingURL=main.css.map */

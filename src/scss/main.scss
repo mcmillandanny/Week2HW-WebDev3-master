@@ -1,0 +1,292 @@
+/* 
+==============================================
+CONTENT:	Project Name Here
+AUTHOR:		Your Name Here
+==============================================
+
+TABLE OF CONTENTS:
+
+0. Reset
+1. Main Layout
+2. Content
+
+==============================================
+*/
+
+/* 0. Reset, Variables, Mixins, etc... ================================= */
+@import 'reset';
+
+@import 'variables';
+
+
+/* 1. Main Layout ================================= */
+
+* {
+	box-sizing: border-box;
+}
+
+body {
+	color: $accent-color;	
+	line-height: 1.5;
+	font-family: 'Gugi', cursive;
+	background: url("../../src/img/texture-bg.jpg") no-repeat center;
+	
+}
+
+h1 {
+	font-size: $header-font-size;
+}
+
+h2 {
+	font-size: $header-font-size;
+}
+h3 {
+	font-size: 1.5em;
+	color: black;
+}
+a {
+	text-decoration: none;
+}
+
+li a {
+	font-size: 1.5em;
+}
+
+header {
+	max-width: 100%;
+	background: #000000;;
+}
+
+p{
+	color: black;
+}
+
+.logo {
+	max-width: 100%;
+	width: 200px;
+}
+
+
+// ===================MAKE SURE TO HAVE AT LEAST ONE PARTIAL SASS FILE INCLUDED IN MAIN
+
+/* 3. Content ================================= */
+					// =====MOBILE===
+.main-header {
+	padding: .5em 0;
+	
+	h1 {
+		color: $primary-color;
+		text-align: center;
+		margin-bottom: 10px;
+	}
+	a {
+		color: $accent-color;
+		text-align: center;
+		display: block;
+		transition: .3s;
+		margin-bottom: 5px;
+	}
+
+	a:hover {
+		transform: scale(1.25)
+
+	}
+}
+
+.hero {
+	background: $primary-color;
+	padding: 3em 0;
+	margin-bottom: 40px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+
+	.logo {
+		border-radius: 0px 0px 200px 200px;
+	}
+
+	h3 {
+		font-style: italic;
+	}
+}
+
+.info {
+	text-align: center;
+	padding-bottom: 15px;
+	margin: 10px;
+
+
+	h1 {
+		margin-bottom: 2em;
+		color: black;
+	}
+
+	a {
+		color: red;
+	}
+}
+
+.info-button {
+    letter-spacing: 0;
+}
+
+.info-button:hover,
+.info-button:active {
+  letter-spacing: 5px;
+}
+
+.info-button:after,
+.info-button:before {
+  // backface-visibility: hidden;
+  border: 1px solid rgba(#fff, 0);
+  bottom: 0px;
+  content: " ";
+  display: block;
+  margin: 0 auto;
+  transition: all .7s ease-in-out;
+  width: 0;
+}
+
+.info-button:hover:after,
+.info-button:hover:before {
+  backface-visibility: hidden;
+  border-color: #fff;
+  transition:  .7s ease-in-out;
+  width: 20%;
+}
+
+.info-button:hover:before {
+  bottom: auto;
+  top: 0;
+  width: 20%;
+}
+
+.col {
+	background: $accent-color;
+	padding: 1em;
+	margin: 0.8em .8em;
+	border-radius: 10px;
+
+	h3 {
+		border-bottom: 1px solid black;
+		text-align: center;
+	}
+	p {
+		margin-bottom: 2em;
+		margin: 2em;
+		text-align: center;
+	}
+
+	a {
+		display: block;
+		text-align: center;
+	}
+
+	.button {
+		background: $button-color;
+		color: #fff;
+		border-radius: 10px;
+		padding: .5em;
+		transition: .3s;
+
+	}
+
+	.button:hover {
+		color: red;
+	}
+	
+}
+
+
+footer {
+	background: $primary-color;
+	color: black;
+	padding: 2em;
+	margin-top: 20px;
+	text-align: center;
+}
+
+
+
+// =====================TABLET@768px================
+
+.info {
+	@include bp-tablet {
+		h1 {
+			font-size: 3em;
+			margin: auto;
+		}
+
+		a {
+			font-size: 2em;
+		}
+	}
+}
+
+
+@include bp-tablet {
+	.col {
+	   display: flex;
+	}	
+	h3 {
+		margin: auto;
+	}
+
+	a {
+		margin: auto;
+		margin-right: 20px;
+	}	
+}
+
+// ========================DESKTOP@960px=====================
+
+
+@include desktop-bp {
+	.main-header {
+		display: flex;
+		justify-content: space-between;
+
+
+		h1 {
+			margin-left: 20px;
+		}
+
+		 a {
+			margin-top: 10px;
+			margin-left: 20px;	
+		}
+
+		ul {
+			display: flex;
+		}
+	}
+}
+
+
+@include desktop-bp {
+	.row {
+		display: flex;
+		flex-direction: row;
+	}
+
+	.col {
+		flex-direction: column;
+		align-content: center;
+		flex: 1;
+
+		a {
+			margin: auto;
+		}
+
+		h3 {
+			border: none;
+		}
+	}
+
+	.selected {
+		-webkit-box-shadow: inset 10px 10px 300px 53px rgba(0,0,0,0.75);
+		-moz-box-shadow: inset 10px 10px 300px 53px rgba(0,0,0,0.75);
+		box-shadow: inset 10px 10px 300px 53px rgba(0,0,0,0.75);
+	}
+}
+

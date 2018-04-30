@@ -1,0 +1,249 @@
+// ==============================================
+// */
+
+/* 0. Reset, Variables, Mixins, etc... ================================= */
+@import 'reset';
+
+@import 'variables';
+
+
+/* 1. Main Layout ================================= */
+
+* {
+	box-sizing: border-box;
+}
+
+html {
+	height: 100%;
+}
+
+body {
+	color: $accent-color;	
+	line-height: 1.5;
+	font-family: 'Gugi', cursive;
+	background: url("../../src/img/texture-bg2.png") no-repeat center;
+	height: 100%;
+	
+}
+
+h1 {
+	font-size: $header-font-size;
+}
+
+h2 {
+	font-size: $header-font-size;
+}
+h3 {
+	font-size: 1.5em;
+	color: black;
+}
+a {
+	text-decoration: none;
+}
+
+li a {
+	font-size: 1.5em;
+}
+
+header {
+	max-width: 100%;
+	background: #000000;;
+}
+
+p{
+	color: black;
+}
+
+.container {
+	min-height: 100%; 
+	height: 100%;
+}
+
+.logo {
+	max-width: 100%;
+	width: 100px;
+	border-radius: 0px 0px 200px 200px;
+	float: right;
+	margin: 45px;;
+
+}
+
+// ===========HEADER============
+
+
+
+.main-header {
+	padding: .5em 0;
+	
+	h1 {
+		color: $primary-color;
+		text-align: center;
+		margin-bottom: 10px;
+	}
+
+	span {
+		color: $primary-color;
+	}
+	a {
+		color: $accent-color;
+		text-align: center;
+		display: block;
+		transition: .3s;
+		margin-bottom: 5px;
+	}
+
+	a:hover {
+		transform: scale(1.25)
+
+	}
+}
+
+
+// =======================form section==================
+
+
+.login-create-account {
+	display: flex;
+	justify-content: center;
+	margin: 80px;
+
+	.btn {
+	  margin: 10px;
+	  margin-left: 15px;
+	  padding: 9px;
+	  width: 150px;
+	  text-align: center;
+	  transition: 0.5s;
+	  color: black;
+	  box-shadow: 0 0 20px #eee;
+	  border-radius: 10px;
+	  background: rgba(172,188,189,1);
+	  background: -moz-linear-gradient(left, rgba(172,188,189,1) 0%, rgba(208,223,224,1) 34%, rgba(179,222,224,1) 54%, rgba(138,177,179,1) 77%, rgba(152,170,171,1) 100%);
+	  background: -webkit-gradient(left top, right top, color-stop(0%, rgba(172,188,189,1)), color-stop(34%, rgba(208,223,224,1)), color-stop(54%, rgba(179,222,224,1)), color-stop(77%, rgba(138,177,179,1)), color-stop(100%, rgba(152,170,171,1)));
+	  background: -webkit-linear-gradient(left, rgba(172,188,189,1) 0%, rgba(208,223,224,1) 34%, rgba(179,222,224,1) 54%, rgba(138,177,179,1) 77%, rgba(152,170,171,1) 100%);
+	  background: -o-linear-gradient(left, rgba(172,188,189,1) 0%, rgba(208,223,224,1) 34%, rgba(179,222,224,1) 54%, rgba(138,177,179,1) 77%, rgba(152,170,171,1) 100%);
+	  background: -ms-linear-gradient(left, rgba(172,188,189,1) 0%, rgba(208,223,224,1) 34%, rgba(179,222,224,1) 54%, rgba(138,177,179,1) 77%, rgba(152,170,171,1) 100%);
+	  background: linear-gradient(to right, rgba(172,188,189,1) 0%, rgba(208,223,224,1) 34%, rgba(179,222,224,1) 54%, rgba(138,177,179,1) 77%, rgba(152,170,171,1) 100%);
+	  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#acbcbd', endColorstr='#98aaab', GradientType=1 );
+	 
+	}
+
+	label {
+		margin: 45px;
+	}
+
+	input {
+		margin-left: 7px;
+		width: 95%;
+	}
+
+	a {
+		display: block;
+		text-align: center;
+	}
+
+
+	.column {
+		width: 225px;
+		height: 225px;
+		background: white;
+		margin: 20px;
+		margin-top: 30px;
+		padding: 20px;
+
+
+	}
+}
+
+.create-account {
+ text-align: center; 
+
+ 	a {
+ 		margin-top: 33px;
+ 		transition: .7s;
+ 	}
+ 	a:hover {
+ 		transform: scale(1.25);
+ 	}
+
+}
+
+
+	
+.form-wrapper {
+	display: none;
+	position: fixed; 
+	left: 25%;
+	top: 25%;
+	width: 600px;
+	height: 250px;
+	background: black;
+	z-index: 1;
+
+	h1 {
+		background: $primary-color;
+		color: black;
+		width: 100%;
+		padding: 5px;
+		text-align: center;
+	}
+	
+	form {
+		padding: 10px;
+		margin: 10px;
+	}
+	input {
+		width: 35%;
+		margin-top: 10px;
+	}
+	button {
+		margin-top: 15px;
+		border-radius: 10px;
+		border: none;
+		text-align: center;
+		line-height: 20px;
+	}
+
+
+	.register-btn {
+		background: $accent-color;
+	}
+
+	.close-btn {
+		background: red;
+	}
+
+
+}
+
+
+
+@include desktop-bp {
+	.main-header {
+		display: flex;
+		justify-content: space-between;
+
+
+		h1 {
+			margin-left: 20px;
+		}
+
+		 a {
+			margin-top: 10px;
+			margin-left: 20px;	
+		}
+
+		ul {
+			display: flex;
+		}
+	}
+}
+
+
+footer {
+	background: $primary-color;
+	color: black;
+	padding: 2em;
+	margin-top: 20px;
+	text-align: center;
+}
